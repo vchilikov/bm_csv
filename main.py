@@ -37,5 +37,8 @@ def write_csv(rows):
 
 
 if __name__ == '__main__':
-    worksheet = get_worksheet()
-    write_csv(get_rows(worksheet))
+    try:
+        worksheet = get_worksheet()
+        write_csv(get_rows(worksheet))
+    except Exception:
+        config.raven_client.captureException()

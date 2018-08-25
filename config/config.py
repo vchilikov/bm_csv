@@ -1,3 +1,5 @@
+from raven import Client
+
 SCOPE = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
@@ -12,3 +14,5 @@ MAIN_COLUMNS = ['НАИМЕНОВАНИЕ', 'Артикул']
 DELIMITER = '\t'
 
 from .local import *
+
+raven_client = Client(DSN)
